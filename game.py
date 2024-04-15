@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-
+import random
 #suit names
 suit_names = ["Joker","Hearts","Diamonds","Clubs","Spades"]
 value_names = ["Nil","Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
@@ -27,7 +27,8 @@ class Deck():
             for suit_val in range(1,len(suit_names)):
                 for val_val in range(1,len(value_names)):
                     self.deck.append(Card(suit_val,val_val))
-    
+        random.shuffle(self.deck)    
+
     def print_deck(self):
         for card in self.deck:
             card.print_card_name()
