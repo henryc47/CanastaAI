@@ -33,8 +33,18 @@ class Deck():
         for card in self.deck:
             card.print_card_name()
     
-
-
+    def deal(self,num_to_deal):
+        dealt = []
+        for i in range(num_to_deal):
+            if len(self.deck)>0:
+                dealt.append(self.deck.pop())
+        return dealt
+    
+class Game():
+    def __init__(self,players):
+        self.players = players
+        self.deck = Deck(2,4)
+        
 
 
 
